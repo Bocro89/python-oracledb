@@ -40,7 +40,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: alpine
+          - os: ubuntu-latest
             platform: amd64
             container: docker.io/library/python:3.11-alpine
     steps:
