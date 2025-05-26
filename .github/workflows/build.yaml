@@ -51,7 +51,8 @@ jobs:
 
       - name: Generate script
         run: |
-          echo export PYO_COMPILE_ARGS=-g0 > build.sh
+          echo "#!/bin/sh" > build.sh
+          echo export PYO_COMPILE_ARGS=-g0 >> build.sh
           echo /opt/python/cp311-cp311/bin/python3.11 -m build >> build.sh
           echo cd dist >> build.sh
           echo auditwheel repair *.whl >> build.sh
